@@ -10,8 +10,6 @@
  *
  * SYNTAX:
  *         {{slide [size] > mediaID | title }}
- *         {{slide [size] > mediaID#page=1&zoom=pagefit | title }}
- *
  *
  */
 
@@ -80,7 +78,7 @@ class syntax_plugin_pdfview_slide extends DokuWiki_Syntax_Plugin {
 
         list($state, $data) = $indata;
 
-        $viewer = DOKU_REL . 'lib/plugins/pdfview/slide-pdf.js/?slide=';
+        $viewer = DOKU_REL . 'lib/plugins/pdfview/pdfjs-slide/?file=';
         $css = array();
 
         // parse parameters
