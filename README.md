@@ -21,3 +21,16 @@ PDFファイルをスライド風に表示します。
 [azu/slide-pdf.js](https://github.com/azu/slide-pdf.js) を DokuWiki のシンタックス プラグインに仕立てたものです。
 
         {{slide [size] > :ns:some.pdf | title}}
+
+
+----
+
+## How to set Viewer size parameter
+
+        width="100%" height="500px"
+        width=640 hight=480
+        100%,500px
+        640x480px
+        800px landscape
+        600 portlait
+
