@@ -94,10 +94,18 @@ class syntax_plugin_pdfview_pdfjs extends DokuWiki_Syntax_Plugin {
         if (isset($args['size']) && (preg_match('/^(\d+)(.*)?$/', $args['size'], $m) === 1)) {
             if (isset($args['portlait'])) {
                 $args['width'] = $args['size'];
-                $args['height'] = (ceil($m[1] * 1.414)) . $m[2];
+                if (empty($m[2]) || $m[2] == 'px') {
+                    $args['height'] = (ceil($m[1] * 1.414) -5) . $m[2];
+                } else {
+                    $args['height'] = (ceil($m[1] * 1.414)) . $m[2];
+                }
             } else { // assume landscape
                 $args['width'] = $args['size'];
-                $args['height'] = (ceil($m[1] / 1.414)) . $m[2];
+                if (empty($m[2]) || $m[2] == 'px') {
+                    $args['height'] = (ceil($m[1] / 1.414) -5) . $m[2];
+                } else {
+                    $args['height'] = (ceil($m[1] / 1.414)) . $m[2];
+                }
             }
             unset($args['size']);
         }
