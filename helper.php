@@ -135,7 +135,8 @@ class helper_plugin_pdfview extends DokuWiki_Plugin {
                 if ((count($matches) > 4) && empty($matches[2])) {
                     $matches[2] = $matches[4];
                     $matches[1] = $matches[1].$matches[4];
-                } elseif (count($matches) > 3) {
+                }
+                if (count($matches) > 3) {
                     $arg['width']  = $matches[1];
                     $arg['height'] = $matches[3];
                 } else {
