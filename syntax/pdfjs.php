@@ -122,7 +122,7 @@ class syntax_plugin_pdfview_pdfjs extends DokuWiki_Syntax_Plugin {
         }
 
         // build style attribute
-        $style = 'border: none; background-color: #696969;';
+        $style = 'border: none; background-color: transparent;';
         foreach ($css as $prop => $value) {
             $style .= ' '.$prop.': '.$value.';';
         }

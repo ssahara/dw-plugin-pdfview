@@ -279,7 +279,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  background-color: #404040;
+  background-color: white; /* #404040; CHANGED by SAHARA */
   background-image: url(images/texture.png);
 }
 
