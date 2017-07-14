@@ -18,27 +18,34 @@ if (!defined('DOKU_INC')) die();
 
 class syntax_plugin_pdfview_slide extends DokuWiki_Syntax_Plugin {
 
-    protected $pattern = '{{slide\b.*?>.*?}}';
     protected $mode;
+    protected $pattern = array();
     protected $opts;
 
     function __construct() {
         $this->mode = substr(get_class($this), 7); // drop 'syntax_' from class name
+
+        // syntax patterns
+        $this->pattern[5] = '{{slide\b.*?>.*?}}';
     }
 
 
-    public function getType()  { return 'substition'; }
-    public function getPType() { return 'block'; }
-    public function getSort()  { return 305; }
-    public function connectTo($mode) {
-        $this->Lexer->addSpecialPattern($this->pattern, $mode, $this->mode);
+    function getType()  { return 'substition'; }
+    function getPType() { return 'block'; }
+    function getSort()  { return 305; }
+
+    /**
+     * Connect pattern to lexer
+     */
+    function connectTo($mode) {
+        $this->Lexer->addSpecialPattern($this->pattern[5], $mode, $this->mode);
     }
 
 
     /**
-     * handle the match
+     * Handle the match
      */
-    public function handle($match, $state, $pos, Doku_Handler $handler) {
+    function handle($match, $state, $pos, Doku_Handler $handler) {
 
         list($params, $media) = explode('>', substr($match, 7, -2), 2);
 
@@ -70,9 +77,9 @@ class syntax_plugin_pdfview_slide extends DokuWiki_Syntax_Plugin {
     }
 
     /**
-     * create output
+     * Create output
      */
-    public function render($format, Doku_Renderer $renderer, $indata) {
+    function render($format, Doku_Renderer $renderer, $indata) {
 
         if ($format != 'xhtml') return false;
 
