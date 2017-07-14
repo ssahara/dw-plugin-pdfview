@@ -1,7 +1,7 @@
 base pdfview
 author Satoshi Sahara
 email sahara.satoshi@gmail.com
-date 2016-10-15
+date 2017-07-14
 name PdfView
 desc Enbedding pdf files in pages using PDF.js
-url
+url  https://github.com/ssahara/dw-plugin-pdfview
