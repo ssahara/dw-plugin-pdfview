@@ -10,4 +10,4 @@ PDF.js is licensed under [Apache](https://github.com/mozilla/pdf.js/blob/master/
 
 ## PDF.js Version used for DokuWiki PdfView plugin
 
-downloaded from: https://github.com/mozilla/pdf.js/releases/download/v1.6.210/pdfjs-1.6.210-dist.zip
+downloaded from: https://github.com/mozilla/pdf.js/releases/download/v1.7.225/pdfjs-1.7.225-dist.zip
